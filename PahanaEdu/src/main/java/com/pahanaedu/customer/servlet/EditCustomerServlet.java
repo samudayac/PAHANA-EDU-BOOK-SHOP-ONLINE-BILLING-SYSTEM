@@ -1,0 +1,52 @@
+package com.pahanaedu.customer.servlet;
+
+import com.pahanaedu.DAO.CustomerDAOImpl;
+import com.pahanaedu.DB.DBConnection;
+import com.pahanaedu.entity.Customer;
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+@WebServlet("/customer/edit_customers")
+public class EditCustomerServlet extends HttpServlet{
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        
+        try{
+            int accountno = Integer.parseInt(req.getParameter("accountno"));
+            String name = req.getParameter("name");
+            String address = req.getParameter("address");
+            String contactno = req.getParameter("contactno");
+            
+            Customer c = new Customer();
+            c.setAccountno(accountno);
+            c.setName(name);
+            c.setAddress(address);
+            c.setContactno(contactno);
+            
+            CustomerDAOImpl dao=new CustomerDAOImpl(DBConnection.getConn());
+            boolean f=dao.updatedEditCustomer(c);
+            
+            HttpSession session=req.getSession();
+            
+            if(f){
+                session.setAttribute("succMsg", "User updated Successfully!!!");
+                resp.sendRedirect("view_customers.jsp");
+            }else{
+                session.setAttribute("failedMsg", "Somthing Wrong!!!");
+                resp.sendRedirect("view_customers.jsp");
+            }
+            
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        
+    }
+    
+    
+}
