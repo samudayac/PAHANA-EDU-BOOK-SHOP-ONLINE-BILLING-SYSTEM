@@ -35,7 +35,7 @@ public class EditCustomerServlet extends HttpServlet{
             HttpSession session=req.getSession();
             
             if(f){
-                session.setAttribute("succMsg", "User updated Successfully!!!");
+                session.setAttribute("succMsg", "Customer updated Successfully!!!");
                 resp.sendRedirect("view_customers.jsp");
             }else{
                 session.setAttribute("failedMsg", "Somthing Wrong!!!");

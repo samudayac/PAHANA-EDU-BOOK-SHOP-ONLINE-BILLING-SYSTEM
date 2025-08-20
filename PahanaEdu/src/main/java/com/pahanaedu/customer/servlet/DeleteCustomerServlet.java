@@ -24,7 +24,7 @@ public class DeleteCustomerServlet extends HttpServlet{
             HttpSession session=req.getSession();
             
             if(f){
-                session.setAttribute("succMsg", "Item Deleted Successfully!!!");
+                session.setAttribute("succMsg", "Customer Deleted Successfully!!!");
                 resp.sendRedirect("view_customers.jsp");
             }else{
                 session.setAttribute("failedMsg", "Somthing Wrong!!!");

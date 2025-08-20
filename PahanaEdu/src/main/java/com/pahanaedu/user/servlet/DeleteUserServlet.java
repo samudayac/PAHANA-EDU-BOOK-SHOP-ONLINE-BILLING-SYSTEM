@@ -24,7 +24,7 @@ public class DeleteUserServlet extends HttpServlet {
             HttpSession session = req.getSession();
             
             if (f) {
-                session.setAttribute("succMsg", "Item Deleted Successfully!!!");
+                session.setAttribute("succMsg", "User Deleted Successfully!!!");
                 resp.sendRedirect(req.getContextPath() + "/admin/users/view_users.jsp");  
             } else {
                 session.setAttribute("failedMsg", "Something went wrong!!!");
