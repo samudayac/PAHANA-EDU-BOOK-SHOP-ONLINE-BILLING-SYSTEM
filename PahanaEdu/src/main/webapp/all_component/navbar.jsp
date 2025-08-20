@@ -37,8 +37,8 @@
   <a href="about.jsp" class="btn btn-light my-2 my-sm-0 me-3">
     <i class="fa-regular fa-file"></i> About
   </a>
-<a href="contact.jsp" class="btn btn-light my-2 my-sm-0 me-3">
-  <i class="fa-solid fa-phone"></i> Contact Us
+<a href="help.jsp" class="btn btn-light my-2 my-sm-0 me-3">
+  <i class="fa-solid fa-circle-question"></i> Help
 </a>
 </form>
 

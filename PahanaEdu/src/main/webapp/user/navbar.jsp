@@ -47,8 +47,8 @@
         <a href="<%= request.getContextPath() %>/about.jsp" class="btn btn-light my-2 my-sm-0 me-3">
             <i class="fa-regular fa-file"></i> About
         </a>
-        <a href="<%= request.getContextPath() %>/contact.jsp" class="btn btn-light my-2 my-sm-0 me-3">
-            <i class="fa-solid fa-phone"></i> Contact Us
+        <a href="<%= request.getContextPath() %>/help.jsp" class="btn btn-light my-2 my-sm-0 me-3">
+        <i class="fa-solid fa-circle-question"></i> Help
         </a>
     </form>
   </div>
