@@ -25,10 +25,10 @@ public class DeleteItemsServlet extends HttpServlet{
             
             if(f){
                 session.setAttribute("succMsg", "Item Deleted Successfully!!!");
-                resp.sendRedirect("all_items.jsp");
+                resp.sendRedirect(req.getContextPath() + "/admin/items/all_items.jsp"); 
             }else{
                 session.setAttribute("failedMsg", "Somthing Wrong!!!");
-                resp.sendRedirect("all_items.jsp");
+                resp.sendRedirect(req.getContextPath() + "/admin/items/all_items.jsp");  
             }
             
         }catch(Exception e){
